@@ -1,0 +1,32 @@
+metrics_filename: data/results.json.gz
+
+influxdb:
+  url: http://localhost:8086
+  batchsize: 1000
+  org: "" # Only for InfluxDB 2.x
+  bucket: k6
+  create_db: false # Not implemented
+
+# Metrics to pass on to InfluxDB
+# uncomment as needed
+metrics:
+  - http_req_duration
+  - vus
+  - http_req_failed
+  # - data_received
+  # - data_sent
+  # - http_req_blocked
+  # - http_req_connecting
+  # - http_req_receiving
+  # - http_req_sending
+  # - http_req_tls_handshaking
+  # - http_req_waiting
+  # - iteration_duration
+  # - iterations
+  # - http_reqs
+  # - vus_max
+
+# These are required, but not something you should need to change
+internal:
+  chan_size: 20000
+  threads: 1
